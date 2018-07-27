@@ -4,9 +4,9 @@ const selectbox = require('../selectbox');
 
 module.exports = function(state) {
   const el = html`<div> ${raw(
-    state.translate('expireInfo', {
+    state.translate('frontPageExpireInfo', {
       downloadCount: '<select id=dlCount></select>',
-      timespan: '<select id=timespan></select>'
+      timespan: state.translate('timespanHours', { num: 24 }) //'<select id=timespan></select>'
     })
   )}
   </div>`;
@@ -24,11 +24,13 @@ module.exports = function(state) {
     dlCountSelect
   );
 
+  /*
   const timeSelect = el.querySelector('#timespan');
   el.replaceChild(
     selectbox(1, [1, 2, 3, 4, 5], num => num, () => {}),
     timeSelect
   );
+  */
 
   return el;
 };

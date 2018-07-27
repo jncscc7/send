@@ -55,7 +55,7 @@ module.exports = function(file, state, emit, progressRatio = 0) {
         </p>
       </div>
 
-      <img src="${assets.get('stamp.svg')}"
+      <img src="${assets.get('sent-done.svg')}"
            class="uploadedFile__stamp ${stampClass}"/> 
     </li>
   `;

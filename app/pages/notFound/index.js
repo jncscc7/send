@@ -9,7 +9,9 @@ module.exports = function(state) {
       ${title(state)}
 
       <div class="error">${state.translate('expiredPageHeader')}</div>
-      <img src="${assets.get('illustration_expired.svg')}" id="expired-img">
+      <img src="${assets.get(
+        'illustration_expired.svg'
+      )}" class="flexible" id="expired-img">
       <div class="description">
         ${state.translate('uploadPageExplainer')}
       </div>

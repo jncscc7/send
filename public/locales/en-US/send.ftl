@@ -26,6 +26,7 @@ uploadSuccessConfirmHeader = Ready to Send
 uploadSvgAlt = Upload
 uploadSuccessTimingHeader = The link to your file will expire after 1 download or in 24 hours.
 expireInfo = The link to your file will expire after { $downloadCount } or { $timespan }.
+frontPageExpireInfo = Expires after { $downloadCount } or { $timespan }
 downloadCount = { $num ->
         [one] 1 download
        *[other] { $num } downloads
@@ -140,4 +141,3 @@ signInExplanation = It's free and gives you many more Send options
 signInLearnMore = Learn more!
 downloadProgressButton = Downloading... { $progress }
 downloadMessage2 = Firefox Send lets you share files with a safe, private, and encrypted link that automatically expires to ensure your stuff does not remain online forever.
-expireSelectText = Expire after { $downloadCount } or { $timespan }

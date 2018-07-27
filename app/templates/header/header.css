@@ -88,7 +88,7 @@
   background-color: var(--primaryControlHoverColor);
 }
 
-@media (max-device-width: 520px), (max-width: 520px) {
+@media (max-device-width: 750px), (max-width: 750px) {
   .header {
     padding-top: 60px;
     flex-direction: column;

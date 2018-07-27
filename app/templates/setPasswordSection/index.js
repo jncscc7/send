@@ -3,6 +3,7 @@ const passwordInput = require('../passwordInput');
 
 module.exports = function(state) {
   const checked = state.password ? 'checked' : '';
+  const label = state.password ? 'addPasswordLabel' : 'addPasswordMessage';
 
   return html`
   <div class="setPasswordSection">
@@ -14,7 +15,7 @@ module.exports = function(state) {
         autocomplete="off"
         onchange=${togglePasswordInput}/>
       <label class="checkbox__label" for="add-password">
-        ${state.translate('unlockInputPlaceholder')}
+        ${state.translate(label)}
       </label>
     </div>
 
@@ -28,9 +29,13 @@ module.exports = function(state) {
     document
       .querySelector('.passwordInput')
       .classList.toggle('passwordInput--hidden', !boxChecked);
+
+    const label = document.querySelector('.checkbox__label');
     if (boxChecked) {
+      label.innerHTML = state.translate('addPasswordLabel');
       unlockInput.focus();
     } else {
+      label.innerHTML = state.translate('addPasswordMessage');
       unlockInput.value = '';
     }
   }

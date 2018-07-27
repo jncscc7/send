@@ -38,8 +38,10 @@ module.exports = function(state, emit) {
   }
 
   function inputChanged() {
-    const input = document.getElementById('password-input');
-    input.classList.remove('input--error');
+    const input = document.querySelector('.passwordForm__error');
+    input.classList.remove('visible');
+    const btn = document.getElementById('password-btn');
+    btn.classList.remove('unlockBtn--error');
   }
 
   function checkPassword(event) {

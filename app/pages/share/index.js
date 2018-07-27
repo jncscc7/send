@@ -21,7 +21,7 @@ module.exports = function(state, emit) {
 
     <div class="page effect--fadeIn" id="shareWrapper">
       <a href="/" class="goBackButton"> 
-        <img src="${assets.get('arrow-left.svg')}"/> 
+        <img src="${assets.get('back-arrow.svg')}"/> 
       </a>
       ${expireInfo(file, state.translate)}
 
@@ -55,11 +55,11 @@ module.exports = function(state, emit) {
         )}
       </div>
 
-      <button
-        class="btn--delete"
+      <a
+        class="error btn--delete"
         title="${state.translate('deleteFileButton')}"
         onclick=${showPopup}>${state.translate('deleteFileButton')}
-      </button>
+      </a>
 
     </div>
 

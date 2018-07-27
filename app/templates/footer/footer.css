@@ -22,6 +22,7 @@
 
 .legalSection__link {
   color: var(--primaryControlFGColor);
+  text-shadow: 0 0 1px #000;
   opacity: 0.9;
   white-space: nowrap;
   margin-right: 2vw;

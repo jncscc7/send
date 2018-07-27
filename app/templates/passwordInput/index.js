@@ -1,6 +1,8 @@
 const html = require('choo/html');
 
 module.exports = function(state) {
+  const placeholder =
+    state.route === '/' ? '' : state.translate('unlockInputPlaceholder');
   const hasPassword = !!state.password;
   const sectionClass = hasPassword
     ? 'passwordInput'
@@ -19,9 +21,7 @@ module.exports = function(state) {
         oninput=${inputChanged}
         onfocus=${focused}
         placeholder="${
-          hasPassword
-            ? passwordPlaceholder(state.password)
-            : state.translate('unlockInputPlaceholder')
+          hasPassword ? passwordPlaceholder(state.password) : placeholder
         }"
       >
     </form>
