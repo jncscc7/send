@@ -5,7 +5,10 @@ const download = require('./download');
 const header = require('../templates/header');
 const footer = require('../templates/footer');
 const fxPromo = require('../templates/fxPromo');
+const signupPromo = require('../templates/signupPromo');
 const activeBackground = require('../templates/activeBackground');
+const fileList = require('../templates/fileList');
+const profile = require('../templates/userAccount');
 
 nanotiming.disabled = true;
 const app = choo();
@@ -20,6 +23,7 @@ function body(template) {
   return function(state, emit) {
     const b = html`<body class="background ${activeBackground(state)}">
       ${banner(state, emit)}
+      ${signupPromo(state)}
       ${header(state)}
       <main class="main">
         <noscript>
@@ -35,11 +39,17 @@ function body(template) {
         </noscript>
         <div class="stripedBox">
           <div class="mainContent">
+
+            ${profile(state)}
+
             ${template(state, emit)}
           </div>
         </div>
+
         <div class="spacer"></div>
-        <div class="uploads"></div>
+        <div class="uploads">
+          ${fileList(state)}
+        </div>
       </main>
       ${footer(state)}
     </body>`;

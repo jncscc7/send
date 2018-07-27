@@ -3,13 +3,14 @@
   bottom: 0;
   left: 0;
   font-size: 13px;
+  font-weight: 600;
   display: flex;
   align-items: flex-end;
   flex-direction: row;
-  justify-content: space-between;
   padding: 50px 31px 41px;
   width: 100%;
   box-sizing: border-box;
+  justify-content: flex-end;
 }
 
 .legalSection {
@@ -20,7 +21,7 @@
 }
 
 .legalSection__link {
-  color: var(--lightTextColor);
+  color: var(--primaryControlFGColor);
   opacity: 0.9;
   white-space: nowrap;
   margin-right: 2vw;
@@ -60,12 +61,12 @@
   margin-bottom: -5px;
 }
 
-@media (max-device-width: 768px), (max-width: 768px) {
+@media (max-device-width: 750px), (max-width: 750px) {
   .footer {
-    flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     max-width: 630px;
+    padding: 20px 31px;
     margin: auto;
   }
 

@@ -98,6 +98,7 @@ export default class FileReceiver extends Nanobus {
         });
       }
       this.msg = 'downloadFinish';
+      this.emit('complete');
       this.state = 'complete';
     } catch (e) {
       this.downloadRequest = null;

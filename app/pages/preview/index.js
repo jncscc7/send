@@ -1,40 +1,23 @@
 const html = require('choo/html');
-const assets = require('../../../common/assets');
-const { bytes } = require('../../utils');
+const titleSection = require('../../templates/title');
+const downloadButton = require('../../templates/downloadButton');
+const downloadedFiles = require('../../templates/uploadedFileList');
 
-module.exports = function(state, pageAction) {
+module.exports = function(state, emit) {
   const fileInfo = state.fileInfo;
 
-  const size = fileInfo.size
-    ? state.translate('downloadFileSize', { size: bytes(fileInfo.size) })
-    : '';
-
-  const title = fileInfo.name
-    ? state.translate('downloadFileName', { filename: fileInfo.name })
-    : state.translate('downloadFileTitle');
-
-  const info = html`
-    <div id="dl-file"
-      data-nonce="${fileInfo.nonce}"
-      data-requires-password="${fileInfo.requiresPassword}"></div>`;
-  if (!pageAction) {
-    return info;
-  }
   return html`
     <div class="page">
-      <div class="title">
-        <span>${title}</span>
-        <span>${' ' + size}</span>
-      </div>
-      <div class="description">${state.translate('downloadMessage')}</div>
-      <img
-        src="${assets.get('illustration_download.svg')}"
-        title="${state.translate('downloadAltText')}"/>
-      ${pageAction}
+      ${titleSection(state)}
+
+      ${downloadedFiles([fileInfo], state, emit)}
+      <div class="description">${state.translate('downloadMessage2')}</div>
+      ${downloadButton(state, emit)}
+
       <a class="link link--action" href="/">
         ${state.translate('sendYourFilesLink')}
       </a>
-      ${info}
+
     </div>
   `;
 };

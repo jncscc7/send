@@ -6,6 +6,8 @@ export default function(state, emitter) {
     document.body.addEventListener('dragover', event => {
       if (state.route === '/') {
         event.preventDefault();
+        const files = document.querySelector('.uploadedFilesWrapper');
+        files.classList.add('uploadArea--noEvents');
       }
     });
     document.body.addEventListener('drop', event => {
@@ -31,7 +33,7 @@ export default function(state, emitter) {
           alert(state.translate('fileTooBig', { size: bytes(MAXFILESIZE) }));
           return;
         }
-        emitter.emit('upload', { file, type: 'drop' });
+        emitter.emit('addFile', { file });
       }
     });
   });

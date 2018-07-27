@@ -34,6 +34,14 @@ timespanHours = { $num ->
         [one] 1 hour
        *[other] { $num } hours
     }
+timespanMinutes = { $num ->
+        [one] 1 minute
+       *[other] { $num } minutes
+    }
+timespanWeeks = { $num ->
+        [one] 1 week
+       *[other] { $num } weeks
+    }
 copyUrlFormLabelWithName = Copy and share the link to send your file: { $filename }
 copyUrlFormButton = Copy to clipboard
 copiedUrl = Copied!
@@ -117,3 +125,19 @@ passwordIsSet = Password set
 maxPasswordLength = Maximum password length: { $length }
 # A short status message shown when there was an error setting the password
 passwordSetError = This password could not be set
+pageHeaderCredits = from the makers of Firefox
+addFilesButton = Add file(s)
+uploadFilesButton = Send
+uploadFileProgress = Sending
+uploadDropDragMessage = Drop files here
+uploadDropClickMessage = or click to select a file
+addPasswordMessage = Protect with password
+addPasswordLabel = Password:
+copyUrlLabel = Copy and share this link:
+passwordReminder = don't forget the password too
+signInPromoText = Sign In/Up!
+signInExplanation = It's free and gives you many more Send options
+signInLearnMore = Learn more!
+downloadProgressButton = Downloading... { $progress }
+downloadMessage2 = Firefox Send lets you share files with a safe, private, and encrypted link that automatically expires to ensure your stuff does not remain online forever.
+expireSelectText = Expire after { $downloadCount } or { $timespan }

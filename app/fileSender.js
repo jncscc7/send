@@ -106,6 +106,7 @@ export default class FileSender extends Nanobus {
         nonce: this.keychain.nonce,
         ownerToken: result.ownerToken
       });
+
       return ownedFile;
     } catch (e) {
       this.msg = 'errorPageHeader';

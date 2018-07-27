@@ -1,25 +1,25 @@
 const html = require('choo/html');
 const passwordInput = require('../passwordInput');
 
-module.exports = function(state, emit) {
-  const file = state.storage.getFileById(state.params.id);
+module.exports = function(state) {
+  const checked = state.password ? 'checked' : '';
 
   return html`
   <div class="setPasswordSection">
     <div class="checkbox">
       <input
-        ${file.hasPassword ? 'disabled' : ''}
-        ${file.hasPassword || state.passwordSetError ? 'checked' : ''}
-        class="checkbox__input"
-        id="add-password"
+        class="checkbox__input" id="add-password"
         type="checkbox"
+        ${checked}
         autocomplete="off"
         onchange=${togglePasswordInput}/>
       <label class="checkbox__label" for="add-password">
-        ${state.translate('requirePasswordCheckbox')}
+        ${state.translate('unlockInputPlaceholder')}
       </label>
     </div>
-    ${passwordInput(file, state, emit)}
+
+    ${passwordInput(state)}
+
   </div>`;
 
   function togglePasswordInput(e) {
